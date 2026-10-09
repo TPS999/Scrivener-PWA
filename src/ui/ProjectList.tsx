@@ -98,6 +98,9 @@ export function ProjectList({ onOpen }: { onOpen: (id: string) => void }) {
         <input ref={zipRef} type="file" accept=".zip,application/zip" hidden onChange={(e) => { const f = e.target.files?.[0]; e.target.value = ''; if (f) importZip(f); }} />
         <input ref={dirRef} type="file" hidden multiple {...{ webkitdirectory: '' }} onChange={(e) => { const l = e.target.files; if (l?.length) importDir(l); e.target.value = ''; }} />
       </div>
+      {import.meta.env.VITE_PREVIEW && (
+        <p className="callout small">This is a preview for trying the writing tools. Dropbox sync, compile downloads and .scriv export need the app hosted at its own address (see the README); this preview’s frame blocks them.</p>
+      )}
       {busy && <p className="muted" role="status">{busy}</p>}
       {projects && !projects.length && (
         <div className="empty welcome">
