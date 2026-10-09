@@ -4,3 +4,4 @@ dev-dist
 test-results
 *.local
 dist-preview
+inkwell-source.zip
