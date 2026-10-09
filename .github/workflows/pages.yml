@@ -15,7 +15,7 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npx vite build
-        env: { BASE_PATH: '/${{ github.event.repository.name }}/' }
+        env: { BASE_PATH: '/${{ github.event.repository.name }}/', VITE_DROPBOX_APP_KEY: jbu4eliel2rwasa }
       - uses: actions/upload-pages-artifact@v3
         with: { path: dist }
       - id: d
